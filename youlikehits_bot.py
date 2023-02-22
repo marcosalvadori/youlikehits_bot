@@ -12,6 +12,7 @@ class YLH:
         self.password = password
         self.options = Options()
         self.options.add_argument("--lang=en")
+        self.options.add_argument("--headless")
         self.bot_ylh = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options = self.options)
 
     # this method open the login link, fill the form and click login button
@@ -38,7 +39,7 @@ class YLH:
 
         while len(bot_ylh.window_handles) > 1:
             time.sleep(1)
-            print("I am waiting the end of the video")
+            print("Watching...")
         testBOT.ylh_loop()
 
 # here we start. Fill the line below with your Youlikehits username and your password
